@@ -4,7 +4,9 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Basic Stats")]
     public float Health = 100f;
+    [Header("Movement Stats")]
     public float impactDamageSelfModifier = 1f; // Adjust this value to control how much damage is taken based on velocity
     private ShipInput _playerInput;
     //private Vector2 _moveInput;
