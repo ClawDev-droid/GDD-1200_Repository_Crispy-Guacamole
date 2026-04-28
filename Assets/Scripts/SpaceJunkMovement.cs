@@ -28,6 +28,11 @@ public class SpaceJunkMovement : MonoBehaviour
         // rotate object
         transform.Rotate(Vector3.forward, RotationSpeed * Time.deltaTime);
 
+        
+    }
+
+    void onBecameInvisible()
+    {
         CheckOutOfBounds();
     }
 

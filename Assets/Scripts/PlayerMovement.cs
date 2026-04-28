@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //private Vector2 _moveInput;
     private float _moveInput;
     private float _turnInput;
-    private float _moveSpeed = 5f;
+    //private float _moveSpeed = 5f;
     public float _thrusterSpeed = 0.1f;
     public float _retroThrusterSpeed = 0.025f;
     public float _turnSpeed = 0.0001f;

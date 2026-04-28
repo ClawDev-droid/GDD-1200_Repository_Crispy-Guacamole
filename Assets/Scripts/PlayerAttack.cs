@@ -7,6 +7,11 @@ public class PlayerAttack : MonoBehaviour
 {
     public string weaponType = "Mass Driver";
     private ShipInput _playerInput;
+    public GameObject firePoint;
+    public GameObject projectile;
+    public float fireRate = 1f; // Fire rate in seconds
+    private bool IsShooting = false;
+    private Coroutine _fireRoutine;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,24 +24,67 @@ public class PlayerAttack : MonoBehaviour
     }
     private void OnFirePerformed(InputAction.CallbackContext context)
     {
+        IsShooting = true;
         fireWeapon();
-        
+        startFireLoop();
+
     }
 
-    /*private void OnMoveCanceled(InputAction.CallbackContext context)
+    private void OnFireCanceled(InputAction.CallbackContext context)
     {
-        _moveInput = Vector2.zero;
-    }*/
+        IsShooting = false;
+        stopFireLoop();
+    }
 
     void fireWeapon()
     {
         // Implement weapon firing logic here
         Debug.Log("Firing " + weaponType);
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ShootLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(fireRate);
+            Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+        } 
+        
+    }
+
+    private void startFireLoop()
+    {
+        if (IsShooting && _fireRoutine == null)
+        {
+            _fireRoutine = StartCoroutine(ShootLoop());
+        }
+    }
+    private void stopFireLoop()
+    {
+        if (!IsShooting && _fireRoutine != null)
+        {
+            StopCoroutine(ShootLoop());
+            _fireRoutine = null;
+        }
+    }
+
+    /* private IEnumerator FireRoutine()
+    {
+        while (IsShooting)
+        {
+            fireWeapon();
+            yield return new WaitForSeconds(fireRate);
+        }
+    }*/
+    private void start()
     {
         
+    }
+    // Update is called once per frame
+    private void Update()
+    {
+        startFireLoop();
+        stopFireLoop();
     }
 }

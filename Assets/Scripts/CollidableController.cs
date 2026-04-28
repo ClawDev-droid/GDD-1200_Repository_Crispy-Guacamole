@@ -29,6 +29,10 @@ public class CollidableController : MonoBehaviour
 
         ScreenWarp();
         DecayDrag();
+        if (Health <= 0)
+        {
+            Destroy(gameObject, 0.25f);
+        }
         
     }
     private void ScreenWarp()
