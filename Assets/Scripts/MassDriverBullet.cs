@@ -48,13 +48,13 @@ public class MassDriverBullet : MonoBehaviour
         if (other.gameObject.CompareTag("Collidable"))
         {
             // Here you can add code to damage the enemy or trigger an effect
-            Debug.Log("Bullet hit a collidable object!");
+            //Debug.Log("Bullet hit a collidable object!");
             selfDestruct();
         }
         if (other.gameObject.CompareTag("Player"))
         {
             // Here you can add code to damage the enemy or trigger an effect
-            Debug.Log("Bullet hit the player!");
+            //Debug.Log("Bullet hit the player!");
             selfDestruct();
         }
     }

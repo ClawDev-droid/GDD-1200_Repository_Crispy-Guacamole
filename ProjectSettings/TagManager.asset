@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collidable
   - DangerZone
+  - View
   layers:
   - Default
   - TransparentFX

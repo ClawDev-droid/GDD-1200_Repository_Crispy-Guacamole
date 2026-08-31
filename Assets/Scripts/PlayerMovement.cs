@@ -4,10 +4,10 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Basic Stats")]
-    public float Health = 100f;
+    //[Header("Basic Stats")]
+    
     [Header("Movement Stats")]
-    public float impactDamageSelfModifier = 1f; // Adjust this value to control how much damage is taken based on velocity
+    
     private ShipInput _playerInput;
     //private Vector2 _moveInput;
     private float _moveInput;
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float _thrusterSpeed = 0.1f;
     public float _retroThrusterSpeed = 0.025f;
     public float _turnSpeed = 0.0001f;
+    public bool canWarp = true;
     private Vector2 _screenBounds;
     private Rigidbody2D _rb;
     public float dragDecay = 0.05f;
@@ -138,6 +139,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ScreenWarp()
     {
+        if (canWarp = true)
+        {
         var position = transform.position;
         if (position.x > _screenBounds.x)
         {
@@ -158,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = position;
+        }
     }
 
 
@@ -170,13 +174,13 @@ public class PlayerMovement : MonoBehaviour
         _rb.angularDamping = spinBaseDrag + spinDragDecay * Mathf.Abs(_rb.angularVelocity);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Collidable"))
         {
             Health -= (impactDamageSelfModifier * _rb.linearVelocity.magnitude); // reduce health on collision, scaled by velocity
             Debug.Log("Player Health: " + Health);
         }
-    }
+    }*/
 
 }

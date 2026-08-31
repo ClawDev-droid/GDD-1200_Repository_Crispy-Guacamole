@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private ShipInput _playerInput;
     public GameObject firePoint;
     public GameObject projectile;
-    public float fireRate = 1f; // Fire rate in seconds
+    public float fireRate = 0.5f; // Fire rate in seconds
     private bool IsShooting = false;
     private Coroutine _fireRoutine;
 
@@ -19,21 +19,32 @@ public class PlayerAttack : MonoBehaviour
     {
         _playerInput = new ShipInput();
         _playerInput.Player.Fire.performed += OnFirePerformed;
-        //_playerInput.Player.Fire.canceled += OnFireCanceled;
+        _playerInput.Player.Fire.canceled += OnFireCanceled;
         _playerInput.Player.Enable();
     }
+    
     private void OnFirePerformed(InputAction.CallbackContext context)
     {
         IsShooting = true;
-        fireWeapon();
-        startFireLoop();
+       /* if (IsShooting == false)
+        {
+            IsShooting = true;
+            fireWeapon();
+            startFireLoop();
+        }
+        else
+        {
+            IsShooting = false;
+            stopFireLoop();
+        }*/
+        
 
     }
 
     private void OnFireCanceled(InputAction.CallbackContext context)
     {
         IsShooting = false;
-        stopFireLoop();
+        //stopFireLoop();
     }
 
     void fireWeapon()
@@ -47,8 +58,9 @@ public class PlayerAttack : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(fireRate);
+            
             Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+            yield return new WaitForSeconds(fireRate);
         } 
         
     }
@@ -64,9 +76,10 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!IsShooting && _fireRoutine != null)
         {
-            StopCoroutine(ShootLoop());
+            StopCoroutine(_fireRoutine);
             _fireRoutine = null;
         }
+        
     }
 
     /* private IEnumerator FireRoutine()
