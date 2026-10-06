@@ -42,9 +42,10 @@ public class SpawnManager2 : MonoBehaviour
             foreach (int RarityThreshold in RelativeSpawnRarities)
             {
                 
-                if (enemyTypeRoll >= RarityThreshold)
+                if (enemyTypeRoll <= RarityThreshold)
                 {
                     enemyTypeIndex = count;
+                    break;
                 }
                 count += 1;
                 

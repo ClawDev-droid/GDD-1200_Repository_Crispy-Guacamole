@@ -1038,7 +1038,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 757085085491957223, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: m_Name
-      value: Alien 1
+      value: Captain Glorp
+      objectReference: {fileID: 0}
+    - target: {fileID: 757085085491957223, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: PlayerTransform
@@ -1641,7 +1645,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74367d150eccc6d44b0115b4832f5714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLookAtPlayer
-  PlayerTransform: {fileID: 2004035972}
+  firePoint: {fileID: 0}
+  ThrusterEmitters: []
+  projectile: {fileID: 0}
+  fireRate: 10
+  shoots: 1
+  moves: 1
+  detectionRange: 100
+  optimalRange: 100
+  _thrusterSpeed: 0.1
+  thrustIntensity: 1
+  _turnSpeed: 0.1
 --- !u!212 &2069454160
 SpriteRenderer:
   serializedVersion: 2
@@ -2233,7 +2247,7 @@ MonoBehaviour:
   - {fileID: 757085085491957223, guid: 08be510db67fe8740a158c95f2c76d55, type: 3}
   - {fileID: 757085085491957223, guid: e7aff84be5113064a8dcb7df939351b2, type: 3}
   - {fileID: 757085085491957223, guid: b8d8def5d32469f458b60ebb07c02cfb, type: 3}
-  - {fileID: 7219126244761029772, guid: 10dbff6028cc5a24db76e2600b5133fa, type: 3}
+  - {fileID: 757085085491957223, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
   SpawnPoints:
   - {fileID: 5657743781922356306}
   - {fileID: 4507297161993679824}
@@ -2245,7 +2259,7 @@ MonoBehaviour:
   - {fileID: 1369545899459352666}
   - {fileID: 7885202988524021620}
   - {fileID: 5047679526117815143}
-  SpawnRarities: 100000000c000000060000000300000000000000
+  SpawnRarities: 100000000c000000060000000300000003000000
   SpawnRate: 15
   initialSpawnAmount: 10
   Player: {fileID: 2004035972}
@@ -2351,7 +2365,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1969692213031983365, guid: 3b4bc7a90b04f264aad07b7d114b2d3e, type: 3}
       propertyPath: m_Name
-      value: Gunship
+      value: Player_Gunship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779898004420422131, guid: 3b4bc7a90b04f264aad07b7d114b2d3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779898004420422131, guid: 3b4bc7a90b04f264aad07b7d114b2d3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4184139067042522985, guid: 3b4bc7a90b04f264aad07b7d114b2d3e, type: 3}
       propertyPath: m_AnchorMax.x

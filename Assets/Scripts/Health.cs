@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collidable"))
         {
-            _currentHealth -= (impactDamageSelfModifier * ((_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude))); // reduce health on collision, scaled by velocity
+            _currentHealth -= (impactDamageSelfModifier * collision.gameObject.GetComponent<CollidableController>().impactDamageModifier * ((_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude))); // reduce health on collision, scaled by velocity
             Debug.Log("Player Health: " + _currentHealth);
             /* * (collision.gameObject.GetComponent<Rigidbody2D>().mass)*/
         }
