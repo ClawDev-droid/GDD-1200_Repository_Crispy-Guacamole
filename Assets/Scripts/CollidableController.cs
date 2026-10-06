@@ -8,6 +8,7 @@ public class CollidableController : MonoBehaviour
     public GameObject _GameManager;
     public float impactDamageSelfModifier = 1f;
     public float impactDamageSelfModifier_Player = 1f;
+    public float impactDamageModifier = 1f;
     private Vector2 _screenBounds;
     public bool canWarp = true;
     private Rigidbody2D _rb;
@@ -47,7 +48,7 @@ public class CollidableController : MonoBehaviour
     }
     private void ScreenWarp()
     {
-        if (canWarp = true)
+        if (canWarp == true)
         {
         var position = transform.position;
         if (position.x > _screenBounds.x)
@@ -87,12 +88,12 @@ public class CollidableController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collidable"))
         {
-            Health -= (impactDamageSelfModifier * (_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude)); // reduce health on collision, scaled by velocity
+            Health -= (impactDamageSelfModifier * collision.gameObject.GetComponent<CollidableController>().impactDamageModifier * (_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude)); // reduce health on collision, scaled by velocity
             //Debug.Log("Asteroid Health: " + Health);
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            Health -= (impactDamageSelfModifier_Player * collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude); // reduce health on collision with Player, scaled by velocity
+            Health -= (impactDamageSelfModifier_Player * collision.gameObject.GetComponent<PlayerMovement>().impactDamageModifier * collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude); // reduce health on collision with Player, scaled by velocity
             //Debug.Log("Asteroid Health: " + Health);
         }
     }

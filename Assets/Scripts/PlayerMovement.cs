@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float baseDrag = 0.00f;
     public float spinDragDecay = 0.1f;
     public float spinBaseDrag = 1f;
+    public float impactDamageModifier = 1f;
 
 
     private void onEnable()
@@ -139,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ScreenWarp()
     {
-        if (canWarp = true)
+        if (canWarp == true)
         {
         var position = transform.position;
         if (position.x > _screenBounds.x)

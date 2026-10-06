@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Player;
     private float PlayerHP;
+    private bool hasWon = false;
     public Health PlayerHealthManager;
+    public PlayerTrigger WinConCheck;
     private Scene CurrentScene;
-    private Scene GameScene;
+    public Scene GameScene;
 
     private void Awake()
     {
@@ -32,6 +34,12 @@ public class GameManager : MonoBehaviour
             if(PlayerHP <= 0)
             {
                 SceneManager.LoadScene("GameOver");
+            }
+
+            hasWon = WinConCheck.hasWon;
+            if(hasWon == true)
+            {
+                SceneManager.LoadScene("Win");
             }
         }
     }
