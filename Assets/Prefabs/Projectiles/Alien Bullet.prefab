@@ -133,7 +133,7 @@ MonoBehaviour:
   impactDamageSelfModifier_Player: 10
   impactDamageModifier: 2.5
   canWarp: 1
-  dragDecay: 0.01
+  dragDecay: 0
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: ec4e297c74924204bacd96a19a9cfbaa, type: 3}
 --- !u!50 &6197082323958382842

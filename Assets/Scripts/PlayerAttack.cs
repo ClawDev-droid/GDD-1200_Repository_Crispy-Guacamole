@@ -58,7 +58,6 @@ public class PlayerAttack : MonoBehaviour
     {
         while (true)
         {
-            
             Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             yield return new WaitForSeconds(fireRate);
         } 

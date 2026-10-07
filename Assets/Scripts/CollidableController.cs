@@ -21,6 +21,7 @@ public class CollidableController : MonoBehaviour
     private void Awake()
     {
         _screenBounds = GetScreenBounds(Camera.main);
+        Debug.Log(_screenBounds);
         _rb = GetComponent<Rigidbody2D>();
         var position = transform.position;
         _GameManager = GameObject.Find("GameManager");
@@ -75,8 +76,10 @@ public class CollidableController : MonoBehaviour
 
     private Vector2 GetScreenBounds(Camera Cam)
     {
-        var screenTopRight = Cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        //var screenTopRight = Cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        var screenTopRight = new Vector3(600, 300, 0);
         return new Vector2(screenTopRight.x, screenTopRight.y);
+        
     }
 
     private void DecayDrag()

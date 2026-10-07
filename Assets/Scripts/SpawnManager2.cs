@@ -38,7 +38,7 @@ public class SpawnManager2 : MonoBehaviour
             var count = 0;
             var enemyTypeIndex = 0;
             var enemyTypeRoll = Random.Range(0, MasterIndex);
-            Debug.Log(enemyTypeRoll);
+            //Debug.Log(enemyTypeRoll);
             foreach (int RarityThreshold in RelativeSpawnRarities)
             {
                 
@@ -60,7 +60,7 @@ public class SpawnManager2 : MonoBehaviour
             var count = 0;
             var enemyTypeIndex = 0;
             var enemyTypeRoll = Random.Range(0, MasterIndex);
-            Debug.Log(enemyTypeRoll);
+            //Debug.Log(enemyTypeRoll);
             foreach (int RarityThreshold in RelativeSpawnRarities)
             {
                 

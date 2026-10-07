@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        Player = GameObject.FindWithTag("Player");
+        PlayerHealthManager = Player.GetComponent<Health>();
+        WinConCheck = Player.GetComponent<PlayerTrigger>();
         GameScene = SceneManager.GetActiveScene();
     }
     

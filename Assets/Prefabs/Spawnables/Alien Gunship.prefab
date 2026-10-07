@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.0787, y: 5.2453, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2871522188787657898}
@@ -173,10 +173,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
   Health: 150
-  score: 100
+  score: 50
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
-  impactDamageSelfModifier: 1
+  impactDamageSelfModifier: 0.5
   impactDamageSelfModifier_Player: 1
   impactDamageModifier: 1
   canWarp: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ce847f4a7b1424aaa4558caf2e8475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::randmove
-  startSpeedMin: 50
+  startSpeedMin: 100
   startSpeedMax: 100
 --- !u!114 &5458201935137826099
 MonoBehaviour:
@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74367d150eccc6d44b0115b4832f5714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLookAtPlayer
-  PlayerTransform: {fileID: 0}
   firePoint: {fileID: 826905832975865691}
   ThrusterEmitters:
   - {fileID: 6074849741740711690}
@@ -447,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 8510432960437961295, guid: 63bef15aefa6d294d8104875087530e3, type: 3}
       propertyPath: m_Name
       value: Port Thruster
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042745941376878493, guid: 63bef15aefa6d294d8104875087530e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 9042745941376878493, guid: 63bef15aefa6d294d8104875087530e3, type: 3}
       propertyPath: m_LocalPosition.x

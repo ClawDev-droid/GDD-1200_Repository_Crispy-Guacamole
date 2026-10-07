@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca471089fddd084a996751cf8bbce7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
-  speed: 12.5
+  speed: 15
   lifetime: 10
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
@@ -131,7 +131,7 @@ MonoBehaviour:
   _GameManager: {fileID: 0}
   impactDamageSelfModifier: 10
   impactDamageSelfModifier_Player: 10
-  impactDamageModifier: 0.5
+  impactDamageModifier: 0.2
   canWarp: 1
   dragDecay: 0
   baseDrag: 0

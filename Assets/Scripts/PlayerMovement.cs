@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     //[Header("Basic Stats")]
     
     [Header("Movement Stats")]
-    
+    //private Camera _Camera;
     private ShipInput _playerInput;
     //private Vector2 _moveInput;
     private float _moveInput;
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public float _thrusterSpeed = 0.1f;
     public float _retroThrusterSpeed = 0.025f;
     public float _turnSpeed = 0.0001f;
+    public int thrustIntensity = 1;
+    public ParticleSystem[] ThrusterEmitters;
     public bool canWarp = true;
     private Vector2 _screenBounds;
     private Rigidbody2D _rb;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float spinDragDecay = 0.1f;
     public float spinBaseDrag = 1f;
     public float impactDamageModifier = 1f;
+    
 
 
     private void onEnable()
@@ -50,19 +53,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        _playerInput.Player.Enable();
         _screenBounds = GetScreenBounds(Camera.main);
+        //_Camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        _playerInput.Player.Enable();
+        //_screenBounds = GetScreenBounds(_Camera);
+        //Debug.Log(_screenBounds);
+        //_screenBounds = GetScreenBounds(Camera.main);
+        Debug.Log(_screenBounds);
         _rb = GetComponent<Rigidbody2D>();
         _playerInput.Player.Enable();
     }
 
     private void Update()
     {
-        //HandleMovement();
+        HandleMovement();
         //ClampToScreen();
         ScreenWarp();
         DecayDrag();
         SpinDecayDrag();
+        //Debug.Log(transform.position);
         
     }
 
@@ -101,18 +110,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        //Vector3 moveDirection = new Vector3(_moveInput.x, _moveInput.y, 0);
-        //transform.position += moveDirection * _moveSpeed * Time.deltaTime;
+        if(_moveInput > 0)
+        {
+        
+            foreach (ParticleSystem Thruster in ThrusterEmitters)
+                {
+                    Thruster.Emit(thrustIntensity);
+                }
+        }
     }
 
     private Vector2 GetScreenBounds(Camera Cam)
     {
-        var screenTopRight = Cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        //var screenTopRight = Cam.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        var screenTopRight = new Vector3(600, 300, 0);
         return new Vector2(screenTopRight.x, screenTopRight.y);
     }
 
 
-    private void ClampToScreen()
+    /*private void ClampToScreen()
     {
         var position = transform.position;
         var halfShipWidth = transform.localScale.x / 2.0f;
@@ -121,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         position.y = Mathf.Clamp(position.y, min:-_screenBounds.y + halfShipHeight, max:_screenBounds.y - halfShipHeight);
 
         transform.position = position;
-    }  
+    }  */
     private void PhysicsHandleMovement()
     {
         if (_moveInput > 0)
