@@ -111,8 +111,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
   speed: 25
   lifetime: 5
+  armtime: 0
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
+  canCollideWithPlayers: 1
+  canCollideWithCollidables: 1
+  hasCluster: 0
+  clusterAmount: 4
+  clusterSpawnDistanceFromCenter: 1
+  ClustersArray: []
 --- !u!114 &1176304134354407111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +143,9 @@ MonoBehaviour:
   dragDecay: 0
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: ec4e297c74924204bacd96a19a9cfbaa, type: 3}
+  signatureCollider: 0
+  playerSignatureProjectile: 0
+  OwnSignatureType: {fileID: 2289283522619549188, guid: ebf61c55ef76bc3498caf7b10382dc83, type: 3}
 --- !u!50 &6197082323958382842
 Rigidbody2D:
   serializedVersion: 5

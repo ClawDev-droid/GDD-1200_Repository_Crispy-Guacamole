@@ -183,6 +183,10 @@ MonoBehaviour:
   dragDecay: 0.05
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: 106764e92f337a347a6bcc7cc522b6fc, type: 3}
+  signatureCollider: 0
+  playerSignatureProjectile: 0
+  hasSignature: 1
+  OwnSignatureType: {fileID: 2289283522619549188, guid: 31c33d615e3d8cc44b42d40ab8ba7abe, type: 3}
 --- !u!114 &3275126978526223455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +441,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1529255904993124689, guid: 63bef15aefa6d294d8104875087530e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556095976845598424, guid: 63bef15aefa6d294d8104875087530e3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2681919689215648289, guid: 63bef15aefa6d294d8104875087530e3, type: 3}

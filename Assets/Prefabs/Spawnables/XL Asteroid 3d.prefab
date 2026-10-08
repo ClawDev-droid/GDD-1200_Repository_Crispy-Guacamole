@@ -182,6 +182,10 @@ MonoBehaviour:
   dragDecay: 0.05
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: b93d430e3c9d109498d52beec0210939, type: 3}
+  signatureCollider: 0
+  playerSignatureProjectile: 0
+  hasSignature: 1
+  OwnSignatureType: {fileID: 4275990148569883083, guid: 127e5bcc115a5154d834f661bbaeaa1a, type: 3}
 --- !u!114 &3275126978526223455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +308,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

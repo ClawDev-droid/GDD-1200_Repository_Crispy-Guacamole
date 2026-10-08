@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 5111286168317995145}
   - component: {fileID: 6866973186625646827}
   - component: {fileID: 5716989779122460905}
+  - component: {fileID: 535289212023329950}
   m_Layer: 0
   m_Name: Player_Interceptor
   m_TagString: Player
@@ -190,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06033c37fb9f226449885208b57caeab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _thrusterSpeed: 0.4
+  _thrusterSpeed: 0.5
   _retroThrusterSpeed: 0.1
   _turnSpeed: 1.5
   thrustIntensity: 2
@@ -202,6 +203,7 @@ MonoBehaviour:
   spinDragDecay: 0.1
   spinBaseDrag: 0.1
   impactDamageModifier: 0.75
+  OwnSignatureType: {fileID: 2289283522619549188, guid: d447087f0aaafaf47b72e2952d825575, type: 3}
 --- !u!50 &7009988819471966310
 Rigidbody2D:
   serializedVersion: 5
@@ -276,8 +278,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0.75}
-      - {x: -0.45, y: -0.5}
-      - {x: 0.45, y: -0.5}
+      - {x: -0.6, y: -0.3}
+      - {x: 0.6, y: -0.3}
   m_UseDelaunayMesh: 1
 --- !u!114 &6642395598954862953
 MonoBehaviour:
@@ -294,7 +296,7 @@ MonoBehaviour:
   weaponType: Mass Driver
   firePoint: {fileID: 9109342328193281618}
   projectile: {fileID: 5458778135331339470, guid: b0a72899d77f0834d873dc428f81a597, type: 3}
-  fireRate: 0.2
+  fireRate: 0.1
 --- !u!114 &5111286168317995145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +340,52 @@ MonoBehaviour:
   MaxHealth: 100
   self: {fileID: 1737636297347673559}
   impactDamageSelfModifier: 0.25
+--- !u!61 &535289212023329950
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737636297347673559}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.47760943}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.35, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &2233696091416491251
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,9 +558,9 @@ RectTransform:
   - {fileID: 2105174084745442922}
   m_Father: {fileID: 1392634605364774424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -87}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 143}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4408995561803420494
@@ -1069,9 +1117,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4755636980725205145}
     m_Modifications:
+    - target: {fileID: 171775593930030429, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 216357945595801016, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786998710804083021, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950494767268114758, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3299129402373101574, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
       propertyPath: m_Name
       value: Interceptor Hull
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325079259640930202, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702759513055136454, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6660172619803912136, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1111,6 +1183,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6660172619803912136, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414369052047639657, guid: e0c39c136e6665045a5685eb6c90ffde, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 5458778135331339470, guid: bcc494b9682d9b44490961ca71273848, type: 3}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: optimalRange
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: _thrusterSpeed
@@ -84,6 +84,14 @@ PrefabInstance:
       propertyPath: Health
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 6004577027408516262, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
+      propertyPath: hasSignature
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004577027408516262, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
+      propertyPath: OwnSignatureType
+      value: 
+      objectReference: {fileID: 2289283522619549188, guid: 31c33d615e3d8cc44b42d40ab8ba7abe, type: 3}
     - target: {fileID: 7511817805371612963, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -130,6 +138,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8708636206067316853, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781711466239047151, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

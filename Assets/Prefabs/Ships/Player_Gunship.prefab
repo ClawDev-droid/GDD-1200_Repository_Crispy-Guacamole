@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 7601721145862527276}
   - component: {fileID: 897834863723323793}
   - component: {fileID: 3150923290675074859}
+  - component: {fileID: 8733303704810572490}
   m_Layer: 0
   m_Name: Player_Gunship
   m_TagString: Player
@@ -453,6 +454,7 @@ MonoBehaviour:
   spinDragDecay: 0.1
   spinBaseDrag: 0.1
   impactDamageModifier: 1
+  OwnSignatureType: {fileID: 2289283522619549188, guid: d447087f0aaafaf47b72e2952d825575, type: 3}
 --- !u!50 &1802798872127629928
 Rigidbody2D:
   serializedVersion: 5
@@ -526,9 +528,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.75}
-      - {x: -0.45, y: -0.5}
-      - {x: 0.45, y: -0.5}
+    - - {x: 0, y: 0.6}
+      - {x: -0.45, y: 0}
+      - {x: 0.45, y: 0}
   m_UseDelaunayMesh: 1
 --- !u!114 &979729104075648668
 MonoBehaviour:
@@ -589,6 +591,52 @@ MonoBehaviour:
   MaxHealth: 150
   self: {fileID: 4982371414954807313}
   impactDamageSelfModifier: 0.25
+--- !u!61 &8733303704810572490
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982371414954807313}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.325}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.85, y: 0.65}
+  m_EdgeRadius: 0
 --- !u!1 &5123164344117632759
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,9 +746,9 @@ RectTransform:
   - {fileID: 1658782055328212915}
   m_Father: {fileID: 4450857655332235366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -87}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 143}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3147643763310920492
@@ -931,6 +979,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26539095759298657}
     m_Modifications:
+    - target: {fileID: 1209346338289847, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 582324042787372834, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
       propertyPath: m_Name
       value: Gunship Hull
@@ -973,6 +1025,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1417330373740587804, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217841498931629622, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728690279625068116, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965478698374370922, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134624300221349623, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715119119686788957, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360925154335648884, guid: 2438a7d258d6e5f41a1e316894ddb732, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.13094287, w: 0.99138993}
   m_LocalPosition: {x: 1.5586, y: 1.4481, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.3, z: 4}
+  m_LocalScale: {x: 0.9, y: 0.45, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6118667445814070890}
@@ -111,8 +111,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
   speed: 80
   lifetime: 5
+  armtime: 0.5
+  armed: 0
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
+  canCollideWithPlayers: 1
+  canCollideWithCollidables: 1
+  hasCluster: 1
+  clusterAmount: 12
+  clusterSpawnDistanceFromCenter: 1
+  ClustersArray:
+  - {fileID: 5458778135331339470, guid: 6e8f8761cf2fa8b4cb7400f8f0d431bf, type: 3}
 --- !u!114 &1176304134354407111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,17 +134,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ceaaeb897a0349bc0c753215dfd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
-  Health: 5
+  Health: 50
   score: 0
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
-  impactDamageSelfModifier: 10
+  impactDamageSelfModifier: 2
   impactDamageSelfModifier_Player: 10
-  impactDamageModifier: 10
+  impactDamageModifier: 0.01
   canWarp: 1
   dragDecay: 0.01
   baseDrag: 0
-  DeathFX: {fileID: 5244901762910483644, guid: 106764e92f337a347a6bcc7cc522b6fc, type: 3}
+  DeathFX: {fileID: 5244901762910483644, guid: 344271f3defe6e74388dae285173849b, type: 3}
+  signatureCollider: 1
+  playerSignatureProjectile: 0
+  hasSignature: 1
+  OwnSignatureType: {fileID: 2813228975181944486, guid: 739de498248041645b3f6732d45bfa84, type: 3}
 --- !u!50 &6197082323958382842
 Rigidbody2D:
   serializedVersion: 5
@@ -148,7 +161,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0

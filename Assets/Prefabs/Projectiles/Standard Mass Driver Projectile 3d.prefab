@@ -113,6 +113,12 @@ MonoBehaviour:
   lifetime: 5
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
+  canCollideWithPlayers: 1
+  canCollideWithCollidables: 1
+  hasCluster: 0
+  clusterAmount: 4
+  clusterSpawnDistanceFromCenter: 1
+  ClustersArray: []
 --- !u!114 &1176304134354407111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +142,9 @@ MonoBehaviour:
   dragDecay: 0
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: 11437259df1604a4ba5aed863a413f15, type: 3}
+  signatureCollider: 0
+  playerSignatureProjectile: 0
+  OwnSignatureType: {fileID: 2289283522619549188, guid: ebf61c55ef76bc3498caf7b10382dc83, type: 3}
 --- !u!50 &6197082323958382842
 Rigidbody2D:
   serializedVersion: 5

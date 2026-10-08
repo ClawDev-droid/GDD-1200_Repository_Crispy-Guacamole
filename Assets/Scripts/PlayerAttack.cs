@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public float fireRate = 0.5f; // Fire rate in seconds
     private bool IsShooting = false;
     private Coroutine _fireRoutine;
+    private bool loaded = true;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
         _playerInput.Player.Fire.performed += OnFirePerformed;
         _playerInput.Player.Fire.canceled += OnFireCanceled;
         _playerInput.Player.Enable();
+        StartCoroutine(ReloadLoop());
     }
     
     private void OnFirePerformed(InputAction.CallbackContext context)
@@ -58,11 +60,33 @@ public class PlayerAttack : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
-            yield return new WaitForSeconds(fireRate);
+            //if (loaded)
+           // {
+                Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+                yield return new WaitForSeconds(fireRate);
+                //loaded = false;
+            //}
+            
+           
+            
         } 
         
     }
+   /* private IEnumerator ReloadLoop()
+    {
+        
+            if (!loaded)
+            {
+                yield return new WaitForSeconds(fireRate);
+                loaded = true;
+            }
+            
+            
+            
+        
+        
+    }*/
+
 
     private void startFireLoop()
     {

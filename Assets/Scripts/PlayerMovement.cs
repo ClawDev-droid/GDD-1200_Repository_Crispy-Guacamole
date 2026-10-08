@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public float spinDragDecay = 0.1f;
     public float spinBaseDrag = 1f;
     public float impactDamageModifier = 1f;
+    public Signature OwnSignatureType;
+    private Signature OwnSignature;
     
 
 
@@ -48,7 +50,14 @@ public class PlayerMovement : MonoBehaviour
         _playerInput.Player.Turn.performed += OnTurnPerformed;
         _playerInput.Player.Turn.canceled += OnTurnCanceled;
         _playerInput.Player.Enable();
+        CreateSignature();
         
+        
+    }
+    private void CreateSignature()
+    {
+        Signature OwnSignature = Instantiate(OwnSignatureType, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+        OwnSignature.LockTo = GetComponent<Transform>();
     }
 
     private void Start()
@@ -59,9 +68,10 @@ public class PlayerMovement : MonoBehaviour
         //_screenBounds = GetScreenBounds(_Camera);
         //Debug.Log(_screenBounds);
         //_screenBounds = GetScreenBounds(Camera.main);
-        Debug.Log(_screenBounds);
+        //Debug.Log(_screenBounds);
         _rb = GetComponent<Rigidbody2D>();
         _playerInput.Player.Enable();
+        
     }
 
     private void Update()

@@ -44,7 +44,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
             if (dir.magnitude < detectionRange)
             {
                 playerFound = true;
-                Debug.Log(gameObject.name + ": I see you");
+                //Debug.Log(gameObject.name + ": I see you");
 
                 
             }
@@ -74,13 +74,12 @@ public class EnemyLookAtPlayer : MonoBehaviour
                 foreach (ParticleSystem Thruster in ThrusterEmitters)
                 {
                     Thruster.Emit(thrustIntensity);
-                    Debug.Log("Thrusting");
                 }
             }
         }
         else
         {
-            Debug.LogWarning(gameObject.name + " is sad :(");
+            //Debug.LogWarning(gameObject.name + " is sad :(");
         }
     }
     private void startFireLoop()

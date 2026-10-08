@@ -8,6 +8,8 @@ TagManager:
   - DangerZone
   - View
   - WinCon
+  - PlayerSignature
+  - Signature
   layers:
   - Default
   - TransparentFX

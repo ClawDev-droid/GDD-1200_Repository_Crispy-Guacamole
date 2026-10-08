@@ -17,15 +17,27 @@ public class CollidableController : MonoBehaviour
     public GameObject DeathFX;
     //public int score = 1;
     private Vector2 _initialPosition = new Vector2(-5, 2);//new Vector2(Random.Range(-_screenBounds.x, _screenBounds.x), Random.Range(-_screenBounds.y, _screenBounds.y));
+    public bool signatureCollider = false;
+    public bool playerSignatureProjectile = false;
+    public bool hasSignature = false;
+    public Signature OwnSignatureType;
+    private Signature OwnSignature;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         _screenBounds = GetScreenBounds(Camera.main);
-        Debug.Log(_screenBounds);
+        //Debug.Log(_screenBounds);
         _rb = GetComponent<Rigidbody2D>();
         var position = transform.position;
         _GameManager = GameObject.Find("GameManager");
         _ScoreTracker = _GameManager.GetComponent<ScoreTracker>();
+        if (hasSignature)
+        {
+            CreateSignature();
+        }
+        
         
     }
     private void start()
@@ -41,11 +53,21 @@ public class CollidableController : MonoBehaviour
         DecayDrag();
         if (Health <= 0)
         {
-            _ScoreTracker.Score += score;
-            Instantiate(DeathFX, transform.position, DeathFX.transform.rotation);
+            
+            DeathEffect();
             Destroy(this.gameObject);
         }
         
+    }
+    public void DeathEffect()
+    {
+        Instantiate(DeathFX, transform.position, DeathFX.transform.rotation);
+        _ScoreTracker.Score += score;
+    }
+    private void CreateSignature()
+    {
+        Signature OwnSignature = Instantiate(OwnSignatureType, GetComponent<Transform>().position, GetComponent<Transform>().rotation);
+        OwnSignature.LockTo = GetComponent<Transform>();
     }
     private void ScreenWarp()
     {
@@ -89,15 +111,36 @@ public class CollidableController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Collidable"))
-        {
-            Health -= (impactDamageSelfModifier * collision.gameObject.GetComponent<CollidableController>().impactDamageModifier * (_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude)); // reduce health on collision, scaled by velocity
-            //Debug.Log("Asteroid Health: " + Health);
-        }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Health -= (impactDamageSelfModifier_Player * collision.gameObject.GetComponent<PlayerMovement>().impactDamageModifier * collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude); // reduce health on collision with Player, scaled by velocity
-            //Debug.Log("Asteroid Health: " + Health);
-        }
+        
+        
+            if (collision.gameObject.CompareTag("Collidable"))
+            {
+                Health -= (impactDamageSelfModifier * collision.gameObject.GetComponent<CollidableController>().impactDamageModifier * (_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude)); // reduce health on collision, scaled by velocity
+                //Debug.Log("Asteroid Health: " + Health);
+                Debug.Log(gameObject.name + " HP: " + Health);
+            }
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Health -= (impactDamageSelfModifier_Player * collision.gameObject.GetComponent<PlayerMovement>().impactDamageModifier * collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude); // reduce health on collision with Player, scaled by velocity
+                //Debug.Log("Asteroid Health: " + Health);
+            }
+        
+        
+        
+            
+            if (collision.gameObject.CompareTag("Signature") && signatureCollider && playerSignatureProjectile)
+            {
+                //Destroy(gameObject, 0.1f);
+            }
+            if (collision.gameObject.CompareTag("PlayerSignature") && signatureCollider && !playerSignatureProjectile)
+            {
+                //Destroy(gameObject, 0.1f);
+            }
+            
+        
+    }
+    private void OnDestroy()
+    {
+        //Instantiate(DeathFX, transform.position, DeathFX.transform.rotation);
     }
 }
