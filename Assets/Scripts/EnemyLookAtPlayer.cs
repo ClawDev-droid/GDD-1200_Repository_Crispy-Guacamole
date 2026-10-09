@@ -5,7 +5,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
 {
     private GameObject Player;
     private Transform PlayerTransform; // Reference to the player's transform
-    public Transform firePoint;
+    public Transform[] FirePoints;
     public ParticleSystem[] ThrusterEmitters;
     private Rigidbody2D _rb;
     public GameObject projectile;
@@ -13,6 +13,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
     public bool shoots = true;
     public bool moves = true;
     public int detectionRange = 100;
+    public int attackRange = 100;
     public int optimalRange = 100;
     private bool playerFound = false;
     private bool IsShooting = false;
@@ -52,7 +53,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
             {
                 playerFound = false;
             }
-            if (playerFound && shoots)
+            if (playerFound && shoots && dir.magnitude <= attackRange)
             {
                 IsShooting = true;
             }
@@ -102,8 +103,11 @@ public class EnemyLookAtPlayer : MonoBehaviour
     {
         while (true)
         {
+            foreach (Transform firePoint in FirePoints)
+            {
+                Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+            }
             
-            Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             yield return new WaitForSeconds(fireRate);
         } 
         

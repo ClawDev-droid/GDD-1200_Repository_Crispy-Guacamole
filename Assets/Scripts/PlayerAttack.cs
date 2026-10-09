@@ -12,7 +12,8 @@ public class PlayerAttack : MonoBehaviour
     public float fireRate = 0.5f; // Fire rate in seconds
     private bool IsShooting = false;
     private Coroutine _fireRoutine;
-    private bool loaded = true;
+    private Coroutine _reloadRoutine;
+    private bool _loaded = true;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
         _playerInput.Player.Fire.performed += OnFirePerformed;
         _playerInput.Player.Fire.canceled += OnFireCanceled;
         _playerInput.Player.Enable();
-        StartCoroutine(ReloadLoop());
+        //StartCoroutine(ReloadLoop()); will crash unity
     }
     
     private void OnFirePerformed(InputAction.CallbackContext context)
@@ -52,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
     void fireWeapon()
     {
         // Implement weapon firing logic here
-        Debug.Log("Firing " + weaponType);
+        //Debug.Log("Firing " + weaponType);
         
     }
 
@@ -60,38 +61,67 @@ public class PlayerAttack : MonoBehaviour
     {
         while (true)
         {
-            //if (loaded)
-           // {
+
+            if (_loaded == true )
+            {
                 Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
-                yield return new WaitForSeconds(fireRate);
-                //loaded = false;
-            //}
+                _loaded = false;
+                if (_reloadRoutine == null)
+                {
+                    _reloadRoutine = StartCoroutine(_Reload());
+                }
+                yield return null;
+                
+            }
+            else
+            {
+                yield return null;
+            }
             
-           
-            
+                
         } 
         
-    }
-   /* private IEnumerator ReloadLoop()
-    {
         
+    }
+    /*private IEnumerator ReloadLoop()
+    {
+        while (true)
+        {
             if (!loaded)
             {
                 yield return new WaitForSeconds(fireRate);
                 loaded = true;
             }
+        }
             
-            
-            
-        
         
     }*/
+// the above section crashes unity, I don't know why
 
+    private IEnumerator _Reload()
+    {
+        while(true)
+        {
+            if (_loaded == false)
+            {
+                yield return new WaitForSeconds(fireRate);
+                _loaded = true;
+                //Debug.Log("hatred");
+                yield return null;
+                
+            }    
+            else
+            {
+                yield return null;
+            } 
+        } 
+    } 
 
     private void startFireLoop()
     {
-        if (IsShooting && _fireRoutine == null)
+        if (IsShooting && _fireRoutine == null )
         {
+            
             _fireRoutine = StartCoroutine(ShootLoop());
         }
     }
@@ -122,5 +152,10 @@ public class PlayerAttack : MonoBehaviour
     {
         startFireLoop();
         stopFireLoop();
+        /*if (_loaded == false)
+        {
+            StartCoroutine(_Reload());
+        }  */ //also crashes, what the hell?
+        
     }
 }

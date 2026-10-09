@@ -22,8 +22,11 @@ public class SpawnManager2 : MonoBehaviour
         foreach (int RelativeRarity in SpawnRarities)
         {
             MasterIndex += RelativeRarity;
+            //Debug.Log(MasterIndex);
             RelativeSpawnRarities.Add(MasterIndex);
         }
+        //Debug.Log(MasterIndex);
+        
         for (int i = initialSpawnAmount; i > 0; i--)
         {   
         InitialStartWave();
@@ -38,7 +41,7 @@ public class SpawnManager2 : MonoBehaviour
             var count = 0;
             var enemyTypeIndex = 0;
             var enemyTypeRoll = Random.Range(0, MasterIndex);
-            //Debug.Log(enemyTypeRoll);
+            ///Debug.Log(enemyTypeRoll);
             foreach (int RarityThreshold in RelativeSpawnRarities)
             {
                 
@@ -60,18 +63,20 @@ public class SpawnManager2 : MonoBehaviour
             var count = 0;
             var enemyTypeIndex = 0;
             var enemyTypeRoll = Random.Range(0, MasterIndex);
+            //if (enemyTypeRoll > 430)
             //Debug.Log(enemyTypeRoll);
             foreach (int RarityThreshold in RelativeSpawnRarities)
             {
                 
-                if (enemyTypeRoll >= RarityThreshold)
+                if (enemyTypeRoll <= RarityThreshold)
                 {
                     enemyTypeIndex = count;
+                    break;
                 }
                 count += 1;
                 
             }
-            var Pos = new Vector3(Random.Range(-400, 400), Random.Range(-200, 200), 0);
+            var Pos = new Vector3(Random.Range(-600, 600), Random.Range(-300, 300), 0);
             Instantiate(Enemies[enemyTypeIndex], Pos, Enemies[enemyTypeIndex].transform.rotation);
         }
     }

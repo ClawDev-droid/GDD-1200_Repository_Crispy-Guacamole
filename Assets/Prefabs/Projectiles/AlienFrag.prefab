@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
   speed: 10
+  speedVariance: 0.1
   lifetime: 0.5
   armtime: 0
+  armed: 1
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
   canCollideWithPlayers: 1
@@ -145,6 +147,7 @@ MonoBehaviour:
   DeathFX: {fileID: 5244901762910483644, guid: ec4e297c74924204bacd96a19a9cfbaa, type: 3}
   signatureCollider: 0
   playerSignatureProjectile: 0
+  hasSignature: 0
   OwnSignatureType: {fileID: 2289283522619549188, guid: ebf61c55ef76bc3498caf7b10382dc83, type: 3}
 --- !u!50 &6197082323958382842
 Rigidbody2D:

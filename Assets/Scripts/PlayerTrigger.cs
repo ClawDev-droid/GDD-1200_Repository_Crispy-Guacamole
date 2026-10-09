@@ -18,10 +18,10 @@ public class PlayerTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null)
+        if (collision != null )
         {
             {
-                Debug.Log("Player found something!");
+                //Debug.Log("Player found something!");
                 if (collision.gameObject.CompareTag("DangerZone"))
                 {
                     Debug.Log("Player rode into the danger zone!");
@@ -29,7 +29,7 @@ public class PlayerTrigger : MonoBehaviour
                 }
                 if (collision.gameObject.CompareTag("WinCon"))
                 {
-                    Debug.Log("Player Won!");
+                    //Debug.Log("Player Won!");
                     hasWon = true;
                     // Win! or something
                 }

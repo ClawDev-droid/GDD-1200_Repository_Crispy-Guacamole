@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
   speed: 80
+  speedVariance: 0
   lifetime: 3
   armtime: 0.25
   armed: 0
@@ -136,20 +137,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
   Health: 5
+  MaxHealth: 0
   score: 0
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
   impactDamageSelfModifier: 10
   impactDamageSelfModifier_Player: 10
-  impactDamageModifier: 1
+  impactDamageModifier: 0.1
   canWarp: 1
   dragDecay: 0
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: d773960af0ed4a74bb3aa6e9512b0c32, type: 3}
   signatureCollider: 0
   playerSignatureProjectile: 0
-  hasSignature: 0
-  OwnSignatureType: {fileID: 2289283522619549188, guid: ebf61c55ef76bc3498caf7b10382dc83, type: 3}
+  hasSignature: 1
+  OwnSignatureType: {fileID: 2813228975181944486, guid: 18fca429363d0424cb0aa50db60f5298, type: 3}
 --- !u!50 &6197082323958382842
 Rigidbody2D:
   serializedVersion: 5
@@ -286,7 +288,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.5
+  m_Radius: 5
 --- !u!1 &6823286574076424581
 GameObject:
   m_ObjectHideFlags: 0

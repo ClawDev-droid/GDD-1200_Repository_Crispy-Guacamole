@@ -74,7 +74,7 @@ public class MassDriverBullet : MonoBehaviour
         if (other.gameObject.CompareTag("Collidable") && canCollideWithCollidables && !other.gameObject.CompareTag("Signature"))
         {
             // Here you can add code to damage the enemy or trigger an effect
-            Debug.Log("Bullet hit a collidable object!");
+            //Debug.Log("Bullet hit a collidable object!");
             selfDestruct();
             
             //Debug.Log("C");
@@ -82,7 +82,7 @@ public class MassDriverBullet : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && canCollideWithPlayers && !other.gameObject.CompareTag("PlayerSignature"))
         {
             // Here you can add code to damage the enemy or trigger an effect
-            Debug.Log("Bullet hit the player!");
+            //Debug.Log("Bullet hit the player!");
             selfDestruct();
             
             //Debug.Log("p");
@@ -91,7 +91,7 @@ public class MassDriverBullet : MonoBehaviour
         {
             if (armed)
             {
-                Debug.Log("Boom");
+                //Debug.Log("Boom");
                 selfDestruct();
                 CollCont.Health = 0;
             }
@@ -102,7 +102,7 @@ public class MassDriverBullet : MonoBehaviour
         {
             if (armed)
             {
-                Debug.Log("Boom");
+                //Debug.Log("Boom");
                 selfDestruct();
                 CollCont.Health = 0;
             }

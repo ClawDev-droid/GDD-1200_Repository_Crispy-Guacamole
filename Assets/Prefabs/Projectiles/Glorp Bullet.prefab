@@ -109,17 +109,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca471089fddd084a996751cf8bbce7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
-  speed: 900
+  speed: 1800
+  speedVariance: 0
   lifetime: 25
-  armtime: 0
+  armtime: 0.1
+  armed: 0
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
   canCollideWithPlayers: 1
-  canCollideWithCollidables: 1
-  hasCluster: 0
-  clusterAmount: 4
+  canCollideWithCollidables: 0
+  hasCluster: 1
+  clusterAmount: 12
   clusterSpawnDistanceFromCenter: 1
-  ClustersArray: []
+  ClustersArray:
+  - {fileID: 5458778135331339470, guid: 3f6129201d318f04ba51629857011657, type: 3}
 --- !u!114 &1176304134354407111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,19 +135,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ceaaeb897a0349bc0c753215dfd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
-  Health: 5
+  Health: 20
+  MaxHealth: 0
   score: 0
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
-  impactDamageSelfModifier: 10
+  impactDamageSelfModifier: 1
   impactDamageSelfModifier_Player: 10
-  impactDamageModifier: 0.25
+  impactDamageModifier: 0.01
   canWarp: 1
   dragDecay: 0.01
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: 344271f3defe6e74388dae285173849b, type: 3}
   signatureCollider: 0
   playerSignatureProjectile: 0
+  hasSignature: 0
   OwnSignatureType: {fileID: 2813228975181944486, guid: 18fca429363d0424cb0aa50db60f5298, type: 3}
 --- !u!50 &6197082323958382842
 Rigidbody2D:
@@ -314,7 +319,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8061956f1b641394592b346aae2a8b13, type: 2}
+  - {fileID: 2100000, guid: a5cc1ee8c89ce164d865ab7a8c004d56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

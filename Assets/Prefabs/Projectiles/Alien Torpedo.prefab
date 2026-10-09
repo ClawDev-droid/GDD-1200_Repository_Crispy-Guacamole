@@ -110,15 +110,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MassDriverBullet
   speed: 80
+  speedVariance: 0
   lifetime: 5
   armtime: 0.5
   armed: 0
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
-  canCollideWithPlayers: 1
-  canCollideWithCollidables: 1
+  canCollideWithPlayers: 0
+  canCollideWithCollidables: 0
   hasCluster: 1
-  clusterAmount: 12
+  clusterAmount: 16
   clusterSpawnDistanceFromCenter: 1
   ClustersArray:
   - {fileID: 5458778135331339470, guid: 6e8f8761cf2fa8b4cb7400f8f0d431bf, type: 3}
@@ -134,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ceaaeb897a0349bc0c753215dfd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
-  Health: 50
+  Health: 100
+  MaxHealth: 0
   score: 0
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}

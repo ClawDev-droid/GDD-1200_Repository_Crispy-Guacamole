@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ceaaeb897a0349bc0c753215dfd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
-  Health: 150
+  Health: 100
+  MaxHealth: 0
   score: 50
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
@@ -213,7 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74367d150eccc6d44b0115b4832f5714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLookAtPlayer
-  firePoint: {fileID: 826905832975865691}
+  FirePoints:
+  - {fileID: 826905832975865691}
   ThrusterEmitters:
   - {fileID: 6074849741740711690}
   - {fileID: 8965017348967027898}
@@ -222,6 +224,7 @@ MonoBehaviour:
   shoots: 1
   moves: 1
   detectionRange: 100
+  attackRange: 100
   optimalRange: 25
   _thrusterSpeed: 0.15
   thrustIntensity: 1

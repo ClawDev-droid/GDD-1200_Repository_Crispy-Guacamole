@@ -3,6 +3,7 @@ using UnityEngine;
 public class CollidableController : MonoBehaviour
 {
     public float Health = 100f;
+    public float MaxHealth;
     public int score = 0;
     public ScoreTracker _ScoreTracker;
     public GameObject _GameManager;
@@ -40,10 +41,14 @@ public class CollidableController : MonoBehaviour
         
         
     }
+    public float GetCurrentHealth()
+    {
+        return Health;
+    }
     private void start()
     {
         
-        
+        MaxHealth = Health;
         
     }
     private void Update()
@@ -117,7 +122,7 @@ public class CollidableController : MonoBehaviour
             {
                 Health -= (impactDamageSelfModifier * collision.gameObject.GetComponent<CollidableController>().impactDamageModifier * (_rb.linearVelocity.magnitude + collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude)); // reduce health on collision, scaled by velocity
                 //Debug.Log("Asteroid Health: " + Health);
-                Debug.Log(gameObject.name + " HP: " + Health);
+                //Debug.Log(gameObject.name + " HP: " + Health);
             }
             if (collision.gameObject.CompareTag("Player"))
             {
