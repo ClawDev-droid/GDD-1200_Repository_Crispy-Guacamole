@@ -1852,6 +1852,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
+      propertyPath: chainFire
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 5458778135331339470, guid: 37e84916a67608645b1c7a6f1a8079bd, type: 3}
@@ -1865,7 +1869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: detectionRange
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: PlayerTransform

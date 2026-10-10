@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   _currentHealth: 0
-  MaxHealth: 100
+  MaxHealth: 175
   self: {fileID: 1737636297347673559}
   impactDamageSelfModifier: 0.25
 --- !u!61 &535289212023329950
@@ -6277,7 +6277,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 2
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1

@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
   Health: 5000
+  MaxHealth: 0
   score: 1000
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
@@ -312,3 +313,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::randmove
   startSpeedMin: 20
   startSpeedMax: 50
+  rotate: 1

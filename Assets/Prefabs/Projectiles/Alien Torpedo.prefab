@@ -112,7 +112,7 @@ MonoBehaviour:
   speed: 80
   speedVariance: 0
   lifetime: 5
-  armtime: 0.5
+  armtime: 0.25
   armed: 0
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20

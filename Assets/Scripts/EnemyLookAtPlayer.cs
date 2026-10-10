@@ -5,6 +5,8 @@ public class EnemyLookAtPlayer : MonoBehaviour
 {
     private GameObject Player;
     private Transform PlayerTransform; // Reference to the player's transform
+    public bool chainFire = false;
+    private int ActiveFirepoint = 0;
     public Transform[] FirePoints;
     public ParticleSystem[] ThrusterEmitters;
     private Rigidbody2D _rb;
@@ -103,10 +105,23 @@ public class EnemyLookAtPlayer : MonoBehaviour
     {
         while (true)
         {
-            foreach (Transform firePoint in FirePoints)
+            if (chainFire == false)
+            {
+                foreach (Transform firePoint in FirePoints)
             {
                 Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             }
+            }
+            else
+            {
+                Instantiate(projectile, FirePoints[ActiveFirepoint].transform.position, FirePoints[ActiveFirepoint].transform.rotation);
+                ActiveFirepoint += 1;
+                if (ActiveFirepoint >= FirePoints.Length)
+                {
+                    ActiveFirepoint = 0;
+                }
+            }
+            
             
             yield return new WaitForSeconds(fireRate);
         } 

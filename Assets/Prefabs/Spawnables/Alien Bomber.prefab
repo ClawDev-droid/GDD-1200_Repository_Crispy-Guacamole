@@ -53,6 +53,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 64e0532a2caa91f4c8de1e9151d799a3, type: 2}
     - target: {fileID: 3275126978526223455, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
+      propertyPath: rotate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275126978526223455, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -74,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: fireRate
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: projectile
@@ -86,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: _thrusterSpeed
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: detectionRange
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5458201935137826099, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: PlayerTransform
@@ -102,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6004577027408516262, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: Health
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6004577027408516262, guid: 7cda623d3ed13a74a955eb919c330e35, type: 3}
       propertyPath: hasSignature

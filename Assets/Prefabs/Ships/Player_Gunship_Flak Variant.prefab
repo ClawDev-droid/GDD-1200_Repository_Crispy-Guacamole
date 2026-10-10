@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129355801299759841, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 371388281074668792, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_PixelPerfect
@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1469743685882248948, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1469743685882248948, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1469743685882248948, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1863864233109371856, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: fireRate
@@ -86,11 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6191349402123135418, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6191349402123135418, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8642058228069044133, guid: c9b7db2c5e60d9f4f8b4744c029cbbe5, type: 3}
       propertyPath: m_LocalPosition.y

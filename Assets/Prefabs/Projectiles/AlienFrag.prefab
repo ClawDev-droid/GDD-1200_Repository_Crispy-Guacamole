@@ -135,12 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
   Health: 5
+  MaxHealth: 0
   score: 0
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
   impactDamageSelfModifier: 10
   impactDamageSelfModifier_Player: 10
-  impactDamageModifier: 1
+  impactDamageModifier: 2
   canWarp: 0
   dragDecay: 0
   baseDrag: 0
