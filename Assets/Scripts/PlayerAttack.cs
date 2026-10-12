@@ -7,7 +7,9 @@ public class PlayerAttack : MonoBehaviour
 {
     public string weaponType = "Mass Driver";
     private ShipInput _playerInput;
-    public GameObject firePoint;
+    public bool chainFire = false;
+    private int ActiveFirepoint = 0;
+    public Transform[] FirePoints;
     public GameObject projectile;
     public float fireRate = 0.5f; // Fire rate in seconds
     private bool IsShooting = false;
@@ -64,7 +66,22 @@ public class PlayerAttack : MonoBehaviour
 
             if (_loaded == true )
             {
-                Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+                if (chainFire == false)
+                {
+                    foreach (Transform firePoint in FirePoints)
+                    {
+                    Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+                    }
+                }  
+                else
+                {
+                    Instantiate(projectile, FirePoints[ActiveFirepoint].transform.position, FirePoints[ActiveFirepoint].transform.rotation);
+                    ActiveFirepoint += 1;
+                    if (ActiveFirepoint >= FirePoints.Length)
+                    {
+                    ActiveFirepoint = 0;
+                    }
+                }
                 _loaded = false;
                 if (_reloadRoutine == null)
                 {

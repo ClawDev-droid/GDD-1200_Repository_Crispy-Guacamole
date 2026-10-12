@@ -11,7 +11,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
     public ParticleSystem[] ThrusterEmitters;
     private Rigidbody2D _rb;
     public GameObject projectile;
-    public int fireRate = 10;
+    public float fireRate = 10;
     public bool shoots = true;
     public bool moves = true;
     public int detectionRange = 100;

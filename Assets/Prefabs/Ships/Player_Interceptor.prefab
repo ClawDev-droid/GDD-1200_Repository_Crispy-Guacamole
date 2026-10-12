@@ -693,7 +693,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   weaponType: Mass Driver
-  firePoint: {fileID: 9109342328193281618}
+  chainFire: 0
+  FirePoints:
+  - {fileID: 7272956078366382148}
   projectile: {fileID: 5458778135331339470, guid: b0a72899d77f0834d873dc428f81a597, type: 3}
   fireRate: 0.1
 --- !u!114 &5111286168317995145

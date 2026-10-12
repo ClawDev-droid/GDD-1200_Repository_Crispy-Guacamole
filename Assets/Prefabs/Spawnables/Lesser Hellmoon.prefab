@@ -575,7 +575,7 @@ MonoBehaviour:
   shoots: 1
   moves: 0
   detectionRange: 100
-  attackRange: 100
+  attackRange: 75
   optimalRange: 25
   _thrusterSpeed: 0
   thrustIntensity: 1
@@ -1018,7 +1018,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6367781147281199772}
-  - {fileID: 6773548687452590622}
   - {fileID: 3888259949574473534}
   m_Father: {fileID: 339788746741539423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -1179,11 +1178,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   projectile: {fileID: 5458778135331339470, guid: 9c53d2f7d8cf7714387e97e796173222, type: 3}
-  fireRate: 6
+  fireRate: 10
   shoots: 1
   moves: 0
-  detectionRange: 500
-  attackRange: 1000
+  detectionRange: 250
+  attackRange: 250
   optimalRange: 25
   _thrusterSpeed: 0
   thrustIntensity: 1
@@ -1499,7 +1498,7 @@ MonoBehaviour:
   shoots: 1
   moves: 0
   detectionRange: 100
-  attackRange: 100
+  attackRange: 75
   optimalRange: 25
   _thrusterSpeed: 0
   thrustIntensity: 1
@@ -1909,7 +1908,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -0.027272543}
   m_LocalScale: {x: 0.13121572, y: 0.13121574, z: 0.13121574}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6773548687452590622}
   m_Father: {fileID: 7707672823458403297}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3190,19 +3190,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8694024164655208475}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.21884756}
-  m_LocalScale: {x: 0.005904708, y: 0.0032803935, z: 0.13121574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.04500001, y: 0.025000004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3991532378934853438}
   - {fileID: 6657289960046013223}
   - {fileID: 8729718714425039614}
-  m_Father: {fileID: 7707672823458403297}
+  m_Father: {fileID: 6367781147281199772}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.4727273}
+  m_AnchoredPosition: {x: 0, y: -1.4600009}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8867400513988998643
@@ -3423,7 +3423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6004577027408516262, guid: b8d8def5d32469f458b60ebb07c02cfb, type: 3}
       propertyPath: score
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6004577027408516262, guid: b8d8def5d32469f458b60ebb07c02cfb, type: 3}
       propertyPath: Health

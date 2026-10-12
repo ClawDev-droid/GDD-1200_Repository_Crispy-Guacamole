@@ -11,6 +11,8 @@ TagManager:
   - PlayerSignature
   - Signature
   - Camera
+  - Overhead
+  - GameManager
   layers:
   - Default
   - TransparentFX
