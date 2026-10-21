@@ -572,6 +572,7 @@ MonoBehaviour:
   ThrusterEmitters: []
   projectile: {fileID: 7734006906971417867, guid: dcaeb094a9deb284fa6612de4dffc8c1, type: 3}
   fireRate: 5
+  charge: 0
   shoots: 1
   moves: 0
   detectionRange: 100
@@ -1178,7 +1179,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   projectile: {fileID: 5458778135331339470, guid: 9c53d2f7d8cf7714387e97e796173222, type: 3}
-  fireRate: 10
+  fireRate: 0
+  charge: 10
   shoots: 1
   moves: 0
   detectionRange: 250
@@ -1495,6 +1497,7 @@ MonoBehaviour:
   ThrusterEmitters: []
   projectile: {fileID: 7734006906971417867, guid: dcaeb094a9deb284fa6612de4dffc8c1, type: 3}
   fireRate: 5
+  charge: 0
   shoots: 1
   moves: 0
   detectionRange: 100

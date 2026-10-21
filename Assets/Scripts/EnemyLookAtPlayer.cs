@@ -12,6 +12,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
     private Rigidbody2D _rb;
     public GameObject projectile;
     public float fireRate = 10;
+    public float charge = 0;
     public bool shoots = true;
     public bool moves = true;
     public int detectionRange = 100;
@@ -24,6 +25,7 @@ public class EnemyLookAtPlayer : MonoBehaviour
     public float _thrusterSpeed = 0.1f;
     public int thrustIntensity = 1;
     public float _turnSpeed = 0.1f;
+
     // Update is called once per frame
     void Start()
     {
@@ -103,8 +105,10 @@ public class EnemyLookAtPlayer : MonoBehaviour
     }
     private IEnumerator ShootLoop()
     {
+        
         while (true)
         {
+            yield return new WaitForSeconds(charge);
             if (chainFire == false)
             {
                 foreach (Transform firePoint in FirePoints)

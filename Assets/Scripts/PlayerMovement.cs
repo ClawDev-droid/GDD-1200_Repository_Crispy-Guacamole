@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public float _turnSpeed = 0.0001f;
     public int thrustIntensity = 1;
     public ParticleSystem[] ThrusterEmitters;
+    public int retroThrustIntensity = 1;
+    public ParticleSystem[] RetroThrusterEmitters;
+    
     public bool canWarp = true;
     private Vector2 _screenBounds;
     private Rigidbody2D _rb;
@@ -126,6 +129,14 @@ public class PlayerMovement : MonoBehaviour
             foreach (ParticleSystem Thruster in ThrusterEmitters)
                 {
                     Thruster.Emit(thrustIntensity);
+                }
+        }
+        if(_moveInput < 0)
+        {
+        
+            foreach (ParticleSystem Thruster in RetroThrusterEmitters)
+                {
+                    Thruster.Emit(retroThrustIntensity);
                 }
         }
     }

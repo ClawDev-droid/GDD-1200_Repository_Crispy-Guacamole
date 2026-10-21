@@ -16,14 +16,39 @@ public class PlayerAttack : MonoBehaviour
     private Coroutine _fireRoutine;
     private Coroutine _reloadRoutine;
     private bool _loaded = true;
+    public int fireChannel = 1;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         _playerInput = new ShipInput();
-        _playerInput.Player.Fire.performed += OnFirePerformed;
-        _playerInput.Player.Fire.canceled += OnFireCanceled;
+        if (fireChannel == 2)
+        {
+            _playerInput.Player.SecondaryFire.performed += OnFirePerformed;
+            _playerInput.Player.SecondaryFire.canceled += OnFireCanceled;
+        }
+        else
+        {    
+            if (fireChannel == 3)
+            {
+                _playerInput.Player.TertiaryFire.performed += OnFirePerformed;
+                _playerInput.Player.TertiaryFire.canceled += OnFireCanceled;
+            }
+            else
+            {
+                if (fireChannel == 4)
+                {
+                    _playerInput.Player.QuaternaryFire.performed += OnFirePerformed;
+                    _playerInput.Player.QuaternaryFire.canceled += OnFireCanceled;
+                }
+                else
+                {
+                    _playerInput.Player.Fire.performed += OnFirePerformed;
+                    _playerInput.Player.Fire.canceled += OnFireCanceled;
+                }
+            }
+        }
         _playerInput.Player.Enable();
         //StartCoroutine(ReloadLoop()); will crash unity
     }
