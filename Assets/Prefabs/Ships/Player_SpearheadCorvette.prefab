@@ -1265,7 +1265,7 @@ Camera:
   m_GameObject: {fileID: 4081219952438418410}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0.0631027, b: 0.16226411, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1477,11 +1477,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 8f1d2d061dd1f794f86e835e92f6dd0d, type: 3}
+  m_Resource: {fileID: 8300000, guid: a9ec38805a2892749b84ff53c4abf1b7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   _currentHealth: 0
-  MaxHealth: 350
+  MaxHealth: 400
   self: {fileID: 5613290196216942250}
   impactDamageSelfModifier: 0.25
 --- !u!61 &7365835552530975485
@@ -12680,9 +12680,9 @@ RectTransform:
   - {fileID: 1417836556929745967}
   m_Father: {fileID: 5717979536652004906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -130.1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 69.899994}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9029292347525602864

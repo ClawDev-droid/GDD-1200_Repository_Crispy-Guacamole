@@ -112,15 +112,15 @@ MonoBehaviour:
   speed: 100
   speedVariance: 0
   lifetime: 5
-  armtime: 0.25
+  armtime: 0.1
   armed: 0
   _rb: {fileID: 6197082323958382842}
   minSpeed: 20
-  canCollideWithPlayers: 0
-  canCollideWithCollidables: 0
+  canCollideWithPlayers: 1
+  canCollideWithCollidables: 1
   hasCluster: 1
-  clusterAmount: 16
-  clusterSpawnDistanceFromCenter: 1
+  clusterAmount: 24
+  clusterSpawnDistanceFromCenter: 1.5
   ClustersArray:
   - {fileID: 5458778135331339470, guid: 750a49698e26e2d4fae0bde6aceeca42, type: 3}
 --- !u!114 &1176304134354407111
@@ -135,20 +135,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ceaaeb897a0349bc0c753215dfd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollidableController
-  Health: 50
+  Health: 5
   MaxHealth: 0
   score: 0
   _ScoreTracker: {fileID: 0}
   _GameManager: {fileID: 0}
-  impactDamageSelfModifier: 2
+  impactDamageSelfModifier: 10
   impactDamageSelfModifier_Player: 10
   impactDamageModifier: 0.01
   canWarp: 1
   dragDecay: 0.01
   baseDrag: 0
   DeathFX: {fileID: 5244901762910483644, guid: 8fc686b9c84ccde45a6837c2ac1c64a4, type: 3}
-  signatureCollider: 1
-  playerSignatureProjectile: 1
+  signatureCollider: 0
+  playerSignatureProjectile: 0
   hasSignature: 1
   OwnSignatureType: {fileID: 2813228975181944486, guid: 739de498248041645b3f6732d45bfa84, type: 3}
 --- !u!50 &6197082323958382842

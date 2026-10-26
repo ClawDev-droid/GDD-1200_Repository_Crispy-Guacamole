@@ -141,7 +141,7 @@ MonoBehaviour:
   _GameManager: {fileID: 0}
   impactDamageSelfModifier: 10
   impactDamageSelfModifier_Player: 10
-  impactDamageModifier: 1.5
+  impactDamageModifier: 2
   canWarp: 0
   dragDecay: 0
   baseDrag: 0
